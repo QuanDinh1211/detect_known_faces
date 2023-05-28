@@ -53,11 +53,6 @@ class SimpleFacerec:
                 self.known_face_encodings, face_encoding)
             name = "Unknown"
 
-            # # If a match was found in known_face_encodings, just use the first one.
-            # if True in matches:
-            #     first_match_index = matches.index(True)
-            #     name = known_face_names[first_match_index]
-
             # Hoặc thay vào đó, sử dụng khuôn mặt đã biết với khoảng cách nhỏ nhất đến khuôn mặt mới
             face_distances = face_recognition.face_distance(
                 self.known_face_encodings, face_encoding)

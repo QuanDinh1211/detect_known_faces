@@ -1,10 +1,10 @@
 import cv2
 from simple_facerec import SimpleFacerec
 
-str = SimpleFacerec()
+facerecModal = SimpleFacerec()
 
 # training mô hình
-str.load_encoding_images('images/')
+facerecModal.load_encoding_images('images/')
 
 # Lấy video từ webcam
 cap = cv2.VideoCapture(0)
@@ -14,7 +14,7 @@ while True:
     ret, frame = cap.read()
 
     # phát hiện và nhận diện khuôn mặt
-    face_locations, face_names = str.detect_known_faces(frame)
+    face_locations, face_names = facerecModal.detect_known_faces(frame)
 
     for face_loc, name in zip(face_locations, face_names):
 
